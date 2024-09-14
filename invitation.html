@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Invitation</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Invitation to Volunteer</h1>
+    </header>
+
+    <!-- Invitation Form Section -->
+    <section>
+        <h2>Volunteer Invitation</h2>
+
+        <!-- Invitation message with placeholders for JavaScript -->
+        <p>Hello <span id="recipientNamePlaceholder">__recipientName__</span>!</p>
+        <p>You have been invited to volunteer for an event held on July 1st. Please respond to this email to sign up as a volunteer.</p>
+        <p>Thanks!</p>
+        <p><span id="hostNamePlaceholder">___hostName___</span></p>
+
+        <!-- Form -->
+        <form id="invitationForm">
+            <fieldset>
+                <legend>Fill in your details to send an invitation</legend>
+
+                <!-- Recipient Name Input -->
+                <label for="recipientName">Recipient's Name:</label>
+                <input type="text" id="recipientNameInput" name="recipientName" required><br><br>
+
+                <!-- Host Name Input -->
+                <label for="hostName">Your Name (Host):</label>
+                <input type="text" id="hostNameInput" name="hostName" required><br><br>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Generate Invitation">
+            </fieldset>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dustin Krasnowski</p>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="invitation.js"></script>
+</body>
+</html
