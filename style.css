@@ -1,0 +1,84 @@
+/* Developer Info: Dustin Krasnowski, September 2024, style.css */
+/* This CSS file controls the styling and layout for all the web pages in Dustin's Portfolio */
+
+/* Global Styles: These styles apply to the entire webpage */
+body {
+    font-family: 'Arial', sans-serif; /* Sets the font for the whole page */
+    background-color: #f0f0f0; /* Light gray background for the whole page */
+    color: #333; /* Dark gray text color for readability */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+/* Header Styles: Styles for the logo, header text, and header background */
+header {
+    background-color: #333; /* Dark background for the header */
+    color: white; /* White text in the header */
+    padding: 20px; /* Adds space inside the header */
+    text-align: center; /* Centers the content inside the header */
+}
+
+header img {
+    display: inline-block; /* Aligns the logo with the text */
+    vertical-align: middle; /* Aligns the logo vertically with the header text */
+}
+
+header h1 {
+    display: inline-block; /* Allows the heading and logo to be on the same line */
+    margin: 0; /* Removes default margin for the header text */
+    padding-left: 10px; /* Adds space between the logo and the header text */
+}
+
+/* Navigation Styles: Styles for the horizontal navigation menu */
+nav ul {
+    list-style-type: none; /* Removes the default bullet points from the list */
+    margin: 0; /* Removes default margin around the list */
+    padding: 0; /* Removes default padding inside the list */
+    background-color: #444; /* Dark gray background for the navigation */
+    text-align: center; /* Centers the navigation links */
+}
+
+nav ul li {
+    display: inline-block; /* Makes the list items horizontal */
+    margin: 0 15px; /* Adds space between the navigation links */
+}
+
+nav ul li a {
+    color: white; /* Makes the link text white */
+    text-decoration: none; /* Removes the underline from the links */
+    padding: 10px; /* Adds space inside the link area */
+}
+
+nav ul li a:hover {
+    background-color: #555; /* Changes the background color of links when hovered */
+    color: #ddd; /* Changes the link text color when hovered */
+}
+
+/* Main Content Styles: Styles for the main content of the page */
+main {
+    padding: 20px; /* Adds space inside the main content area */
+}
+
+h2 {
+    color: #444; /* Dark gray color for section headers */
+}
+
+/* Footer Styles: Styles for the footer at the bottom of the page */
+footer {
+    background-color: #333; /* Dark background color for the footer */
+    color: white; /* White text color in the footer */
+    text-align: center; /* Centers the content inside the footer */
+    padding: 10px; /* Adds space inside the footer */
+    position: relative; /* Ensures the footer stays at the bottom of the page */
+    bottom: 0; /* Positions the footer at the bottom */
+    width: 100%; /* Ensures the footer spans the entire width of the page */
+}
+
+/* Anchor Links (Links within the content): Controls link styles globally */
+a {
+    color: #0066cc; /* Default link color: blue */
+}
+
+a:hover {
+    color: #003366; /* Darker blue when hovered */
+}
