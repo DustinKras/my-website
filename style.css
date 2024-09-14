@@ -82,3 +82,24 @@ a {
 a:hover {
     color: #003366; /* Darker blue when hovered */
 }
+
+/* Gallery Styles */
+.gallery {
+    display: flex; /* Aligns thumbnails in a row */
+    gap: 20px; /* Adds space between the thumbnails */
+    justify-content: center; /* Centers the gallery */
+    margin: 20px 0;
+}
+
+.thumbnail {
+    width: 150px; /* Defines the size for the thumbnail images */
+    height: auto;
+    border: 2px solid #ddd; /* Adds a light border around the thumbnail */
+    border-radius: 5px; /* Adds slight rounding to the corners */
+    transition: transform 0.2s ease-in-out; /* Adds a slight animation effect on hover */
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Zooms in the image slightly when hovered */
+    border-color: #666; /* Darkens the border on hover */
+}
