@@ -1,41 +1,32 @@
-// Array of image data (can easily be extended without hard-coding new values)
-const galleryImages = [
-    { thumbnail: "images/fullsize1.png", fullsize: "images/fullsize1.png", alt: "Thumbnail 1" },
-    { thumbnail: "images/fullsize2.png", fullsize: "images/fullsize2.png", alt: "Thumbnail 2" },
-    { thumbnail: "images/fullsize3.png", fullsize: "images/fullsize3.png", alt: "Thumbnail 3" }
-];
-
 // Preload gallery images
 function preloadImages() {
-    galleryImages.forEach(image => {
+    const images = [
+        "fullsize1.png",
+        "fullsize2.png",
+        "fullsize3.png"
+    ];
+    images.forEach((src) => {
         const img = new Image();
-        img.src = image.fullsize;
+        img.src = src;
     });
 }
 
-// Insert gallery images dynamically
-function insertGalleryImages() {
-    const galleryContainer = document.querySelector('.gallery-container');
-    galleryImages.forEach(image => {
-        const imgElement = document.createElement('img');
-        imgElement.className = 'thumbnail';
-        imgElement.src = image.thumbnail;
-        imgElement.alt = image.alt;
-        imgElement.dataset.fullsize = image.fullsize;
-        imgElement.onclick = () => showFullImage(imgElement); // Assign click event handler
-        galleryContainer.appendChild(imgElement);
-    });
-}
-
-// Show full-size image
-function showFullImage(thumbnail) {
+// Rollover function for gallery images
+function setupRollovers() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
     const fullSizeImage = document.getElementById('fullSizeImage');
-    fullSizeImage.src = thumbnail.dataset.fullsize;
-    fullSizeImage.alt = thumbnail.alt; // Set the alt text
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            // Set the source of the full-size image to the data-fullsize attribute of the clicked thumbnail
+            fullSizeImage.src = thumbnail.dataset.fullsize;
+            fullSizeImage.style.display = 'block'; // Ensure full-size image is displayed
+        });
+    });
 }
 
-// Run preload and setup on page load
+// Run preload and rollover setup on page load
 function onPageLoad() {
     preloadImages();
-    insertGalleryImages();
+    setupRollovers();
 }
