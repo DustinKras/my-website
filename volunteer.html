@@ -1,55 +1,42 @@
-// Initialize an empty array to store volunteers
-let volunteers = [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Management</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
 
-// Function to update the display list with index numbers
-function updateVolunteerList() {
-    const listElement = document.getElementById("volunteerList");
-    listElement.innerHTML = ""; // Clear the list
+    <!-- Header -->
+    <header>
+        <h1>Volunteer Management</h1>
+    </header>
 
-    // Loop through the array and display each volunteer with a number
-    volunteers.forEach((volunteer, index) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `${index + 1}. ${volunteer}`;
-        listElement.appendChild(listItem);
-    });
-}
+    <!-- Volunteer Management Section -->
+    <section>
+        <h2>Manage Volunteers</h2>
 
-// Add event listener for the "Add Volunteer" button
-document.getElementById("addBtn").addEventListener("click", function() {
-    const volunteerName = document.getElementById("volunteerName").value.trim();
-    if (volunteerName) {
-        volunteers.push(volunteerName); // Add volunteer to the array
-        updateVolunteerList(); // Update the displayed list
-        document.getElementById("volunteerForm").reset(); // Clear input field
-    }
-});
+        <!-- Form to add and delete volunteers -->
+        <form id="volunteerForm">
+            <label for="volunteerName">Enter Volunteer Name:</label>
+            <input type="text" id="volunteerName" name="volunteerName" required>
+            <br><br>
 
-// Add event listener for the "Delete Volunteer" button
-document.getElementById("deleteBtn").addEventListener("click", function() {
-    const volunteerName = document.getElementById("volunteerName").value.trim();
-    const index = volunteers.indexOf(volunteerName);
-    
-    if (index !== -1) {
-        volunteers.splice(index, 1); // Remove the volunteer from the array
-        updateVolunteerList(); // Update the displayed list
-    } else {
-        alert("Volunteer not found");
-    }
-    document.getElementById("volunteerForm").reset();
-});
+            <button type="button" id="addBtn">Add Volunteer</button>
+            <button type="button" id="deleteBtn">Delete Volunteer</button>
+            <button type="button" id="clearBtn">Clear List</button>
+            <button type="button" id="sortBtn">Sort Volunteers by Last Name</button>
+        </form>
 
-// Add event listener for the "Clear List" button
-document.getElementById("clearBtn").addEventListener("click", function() {
-    volunteers = []; // Clear the array
-    updateVolunteerList(); // Update the displayed list
-});
+        <!-- Display volunteer list here -->
+        <h3>Volunteer List</h3>
+        <ul id="volunteerList">
+            <!-- Volunteers will be displayed here -->
+        </ul>
+    </section>
 
-// Add event listener for the "Sort Volunteers by Last Name" button
-document.getElementById("sortBtn").addEventListener("click", function() {
-    volunteers.sort(function(a, b) {
-        const lastNameA = a.split(" ").slice(-1)[0]; // Get last name of volunteer A
-        const lastNameB = b.split(" ").slice(-1)[0]; // Get last name of volunteer B
-        return lastNameA.localeCompare(lastNameB); // Sort alphabetically
-    });
-    updateVolunteerList(); // Update the displayed list
-});
+    <!-- Link to your JavaScript file -->
+    <script src="volunteers.js"></script> <!-- Ensure this file path matches your saved JavaScript file -->
+</body>
+</html>
