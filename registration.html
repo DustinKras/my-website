@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitation Page</title>
+    <!-- Link to the CSS file -->
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <body>
+    <!-- Header Section -->
     <header>
         <div class="top">
             <a class="logo" href="index.html">Volunteers<span class="dotcom">.org</span></a>
@@ -24,45 +26,66 @@
         </nav>
     </header>
 
+    <!-- Main Content Section: Form -->
     <section id="pageForm">
         <h2>Register for an Invitation</h2>
         <form id="invitationForm" action="#">
-            <label for="userName">Username:</label>
-            <input type="text" id="userName" name="userName" placeholder="Enter your Username" required>
+            <div class="form-group">
+                <label for="userName">Username:</label>
+                <input type="text" id="userName" name="userName" placeholder="Enter your Username" required>
+            </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            </div>
 
-            <label for="passwordVerify">Verify your Password:</label>
-            <input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter your Password again" required>
+            <div class="form-group">
+                <label for="passwordVerify">Verify your Password:</label>
+                <input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter your Password again" required>
+            </div>
 
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
+            </div>
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
+            </div>
 
-            <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your Phone Number" required pattern="\(\d{3}\) \d{3}-\d{4}">
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(xxx) xxx-xxxx" required pattern="\(\d{3}\) \d{3}-\d{4}">
+            </div>
 
-            <label>Sign up for the newsletter:</label>
-            <input type="radio" id="newsletterYes" name="signUpNewsletter" value="Yes" checked>
-            <label for="newsletterYes">Yes</label>
-            <input type="radio" id="newsletterNo" name="signUpNewsletter" value="No">
-            <label for="newsletterNo">No</label>
+            <div class="form-group">
+                <label>Sign up for the newsletter:</label>
+                <input type="radio" id="newsletterYes" name="signUpNewsletter" value="Yes" checked>
+                <label for="newsletterYes">Yes</label>
+                <input type="radio" id="newsletterNo" name="signUpNewsletter" value="No">
+                <label for="newsletterNo">No</label>
+            </div>
 
-            <input type="submit" value="Next step">
+            <div class="form-group">
+                <input type="submit" value="Next Step" class="submit-btn">
+            </div>
         </form>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>This events site is for IT3515 tasks.</p>
     </footer>
 
-    <script src="validate.js"></script> <!-- Optional: JS for form validation -->
+    <!-- Optional: JS for form validation -->
+    <script src="validate.js"></script>
 </body>
 
 </html>
