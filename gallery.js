@@ -1,42 +1,32 @@
-// Array of full-size images (no separate thumbnails needed)
-const galleryImages = [
-    { fullsize: "fullsize1.png" },
-    { fullsize: "fullsize2.png" },
-    { fullsize: "fullsize3.png" },
-    // Add more images here as needed
-];
-
-// Function to preload images
+// Preload gallery images
 function preloadImages() {
-    galleryImages.forEach((image) => {
+    const images = [
+        "fullsize1.png",
+        "fullsize2.png",
+        "fullsize3.png"
+    ];
+    images.forEach((src) => {
         const img = new Image();
-        img.src = image.fullsize;
+        img.src = src;
     });
 }
 
-// Function to dynamically create and display gallery images
-function createGallery() {
-    const galleryContainer = document.querySelector(".gallery-container");
-    galleryImages.forEach((image) => {
-        const imgElement = document.createElement("img");
-        imgElement.classList.add("thumbnail"); // Assigns the thumbnail class for CSS styling
-        imgElement.src = image.fullsize;       // Use full-size image for both thumbnail and full-size display
-        imgElement.alt = "Gallery Image";
+// Rollover function for gallery images
+function setupRollovers() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const fullSizeImage = document.getElementById('fullSizeImage');
 
-        // Rollover effect (optional for highlighting or zooming)
-        imgElement.onmouseover = () => imgElement.classList.add("hovered");
-        imgElement.onmouseout = () => imgElement.classList.remove("hovered");
-
-        // Append to gallery container
-        galleryContainer.appendChild(imgElement);
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            // Set the source of the full-size image to the data-fullsize attribute of the clicked thumbnail
+            fullSizeImage.src = thumbnail.dataset.fullsize;
+            fullSizeImage.classList.add('loaded'); // Apply the loaded class for fade-in effect
+        });
     });
 }
 
-// On page load, preload images and create gallery
+// Run preload and rollover setup on page load
 function onPageLoad() {
     preloadImages();
-    createGallery();
+    setupRollovers();
 }
-
-// Execute the function on page load
-window.onload = onPageLoad;
