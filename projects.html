@@ -8,20 +8,20 @@
     <title>Dustin Krasnowski's Projects</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <!-- Fireworks.js for fireworks effect -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/fireworks.js"></script>
 </head>
 <body>
 
-       <!-- Header section of the webpage, includes logo and name -->
+    <!-- Header section of the webpage, includes logo and name -->
     <header>
-       <!-- Displays a logo image and alt text if the image cannot load -->
        <img src="Logo.png" alt="Dustin's Logo" width="100" height="100">
-       <!-- Main title of the webpage (About Me page) -->
        <h1>About Dustin Krasnowski</h1>
     </header>
 
     <!-- Banner Section -->
     <section id="banner">
-        <img id="bannerImage" src="banner1.png" alt="Banner Image" width="100%" height="300px">
+        <img id="bannerImage" src="banner1.png" alt="Banner Image" style="width: 100%; height: 300px;">
     </section>
 
     <!-- Navigation menu section for site-wide navigation links -->
@@ -33,7 +33,7 @@
           <li><a href="contact.html">Contact</a></li>
           <li><a href="volunteer.html">Volunteer Management</a></li>
           <li><a href="invitation.html">Volunteer Invitation</a></li>
-          <li><a href="registration.html">Registration</a></li> <!-- Link to registration.html -->
+          <li><a href="registration.html">Registration</a></li>
           <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
@@ -70,7 +70,7 @@
           </div>
         </section>
 
-                <!-- Video Section -->
+        <!-- Video Section -->
         <section>
             <h2>My Favorite Video-Game Collection: Halo Infinite | Campaign Launch Trailer</h2>
             <iframe width="1099" height="618" 
@@ -83,13 +83,19 @@
             </iframe>
         </section>
 
-                <!-- Audio Section -->
+        <!-- Audio Section -->
         <section>
             <h2>Listen to Cat-Themed Audio</h2>
             <audio controls>
               <source src="CatAudio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
+        </section>
+
+        <!-- Fireworks Effect -->
+        <section>
+            <h2>Celebrating the Success of My Projects</h2>
+            <div id="fireworks-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;"></div>
         </section>
     </main>
 
@@ -98,5 +104,61 @@
         <p>Copyright © 2024 Dustin Krasnowski</p>
         <p>Check out my <a href="contact.html">contact page</a> to get in touch with me!</p>
     </footer>
+
+    <!-- Fireworks Initialization Script -->
+    <script>
+        const container = document.getElementById('fireworks-container');
+        
+        // Initialize the fireworks effect
+        const fireworks = new Fireworks(container, {
+            autoresize: true,
+            opacity: 0.5,
+            acceleration: 1.05,
+            friction: 0.97,
+            gravity: 1.5,
+            particles: 150,
+            trace: 3,
+            explosion: 5,
+            intensity: 30,
+            flickering: 50,
+            lineStyle: 'round',
+            hue: {
+                min: 0,
+                max: 360
+            },
+            delay: {
+                min: 20,
+                max: 30
+            },
+            rocketsPoint: {
+                min: 50,
+                max: 50
+            },
+            brightness: {
+                min: 50,
+                max: 80
+            },
+            decay: {
+                min: 0.015,
+                max: 0.03
+            },
+            mouse: {
+                click: true,
+                move: false,
+                max: 3
+            },
+            sound: {
+                enable: false // Set to true if you want sound effects
+            }
+        });
+
+        // Start fireworks when the page loads
+        fireworks.start();
+
+        // Stop fireworks after 10 seconds
+        setTimeout(() => {
+            fireworks.stop();
+        }, 10000); // Fireworks display lasts 10 seconds
+    </script>
 </body>
 </html>
