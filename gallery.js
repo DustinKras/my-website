@@ -11,14 +11,22 @@ function preloadImages() {
     });
 }
 
-// Function to show full-size image when a thumbnail is clicked
-function showFullImage(thumbnail) {
-    const fullSizeImage = document.getElementById("fullSizeImage");
-    const fullSizeSrc = thumbnail.getAttribute("data-fullsize");
-    fullSizeImage.src = fullSizeSrc;
+// Rollover function for gallery images
+function setupRollovers() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const fullSizeImage = document.getElementById('fullSizeImage');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', () => {
+            // Set the source of the full-size image to the data-fullsize attribute of the clicked thumbnail
+            fullSizeImage.src = thumbnail.dataset.fullsize;
+            fullSizeImage.style.display = 'block'; // Ensure full-size image is displayed
+        });
+    });
 }
 
-// Run preload and other setup on page load
+// Run preload and rollover setup on page load
 function onPageLoad() {
     preloadImages();
+    setupRollovers();
 }
