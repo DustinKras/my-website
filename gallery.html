@@ -11,7 +11,14 @@
     <!-- Gallery Section -->
     <section id="gallery">
         <h2>Image Gallery</h2>
-        <div class="gallery-container"></div> <!-- Empty container where images will be inserted -->
+        <div class="gallery-container">
+            <!-- Thumbnails with full-size images as sources -->
+            <img class="thumbnail" id="image1" src="fullsize1.png" alt="Thumbnail 1" data-fullsize="fullsize1.png">
+            <img class="thumbnail" id="image2" src="fullsize2.png" alt="Thumbnail 2" data-fullsize="fullsize2.png">
+            <img class="thumbnail" id="image3" src="fullsize3.png" alt="Thumbnail 3" data-fullsize="fullsize3.png">
+        </div>
+        <!-- Full-size Image Container (Initially hidden) -->
+        <img id="fullSizeImage" class="full-size" src="" alt="Full-size Image">
     </section>
 
     <!-- JavaScript File for Preloading and Gallery Functionality -->
