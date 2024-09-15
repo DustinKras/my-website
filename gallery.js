@@ -20,7 +20,7 @@ function setupRollovers() {
         thumbnail.addEventListener('click', () => {
             // Set the source of the full-size image to the data-fullsize attribute of the clicked thumbnail
             fullSizeImage.src = thumbnail.dataset.fullsize;
-            fullSizeImage.classList.add('loaded'); // Apply the loaded class for fade-in effect
+            fullSizeImage.style.display = 'block'; // Ensure full-size image is displayed
         });
     });
 }
