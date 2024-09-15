@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-    <title>Interests Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmation</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
-
 <body>
     <header>
         <div class="top">
@@ -13,32 +13,48 @@
         </div>
         <nav>
             <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-			    <li><a href="volunteer.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li><a href="registration.html" class="active">Registration</a>
-                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="invitation.html">Invitation</a></li>
+			    <li><a href="volunteer.html">Volunteers</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="registration.html" class="active">Registration</a></li>
             </ul>
-
         </nav>
     </header>
+
     <section id="pageFormContent">
-
-            <!--
-			Process content to display content on screen
-			
-			-->
-            
-
+        <h2>Registration Confirmation</h2>
+        <p>Thank you for registering! Here are the details you submitted:</p>
+        
+        <!-- Display the submitted form data here -->
+        <ul>
+            <li><strong>Username:</strong> <span id="username"></span></li>
+            <li><strong>First Name:</strong> <span id="firstName"></span></li>
+            <li><strong>Last Name:</strong> <span id="lastName"></span></li>
+            <li><strong>Email:</strong> <span id="email"></span></li>
+            <li><strong>Phone Number:</strong> <span id="phoneNumber"></span></li>
+            <li><strong>Newsletter Subscription:</strong> <span id="newsletter"></span></li>
+        </ul>
     </section>
 
-    <footer>This events site is for school tasks.
+    <footer>
+        <p>This events site is for school tasks.</p>
     </footer>
-</body>
 
+    <script>
+        // Function to get query string parameters and display them
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('username').textContent = urlParams.get('userName');
+            document.getElementById('firstName').textContent = urlParams.get('firstName');
+            document.getElementById('lastName').textContent = urlParams.get('lastName');
+            document.getElementById('email').textContent = urlParams.get('email');
+            document.getElementById('phoneNumber').textContent = urlParams.get('phoneNumber');
+            document.getElementById('newsletter').textContent = urlParams.get('signUpNewsletter');
+        }
+
+        // Call the function on page load
+        window.onload = getQueryParams;
+    </script>
+</body>
 </html>
