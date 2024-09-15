@@ -1,32 +1,42 @@
-// Preload gallery images
+// Array of image data (thumbnail and full-size)
+const galleryImages = [
+    { thumbnail: "fullsize1.png", fullsize: "fullsize1.png" },
+    { thumbnail: "fullsize2.png", fullsize: "fullsize2.png" },
+    { thumbnail: "fullsize3.png", fullsize: "fullsize3.png" },
+    // Add more images here as needed
+];
+
+// Function to preload images
 function preloadImages() {
-    const thumbnails = document.querySelectorAll(".thumbnail"); // Select all thumbnails
-
-    thumbnails.forEach((thumbnail) => {
-        const fullSizeSrc = thumbnail.getAttribute("data-fullsize");
-        const fullSizeImage = new Image();
-        fullSizeImage.src = fullSizeSrc; // Preload the full-size image
+    galleryImages.forEach((image) => {
+        const img = new Image();
+        img.src = image.fullsize;
     });
 }
 
-// Dynamic Rollover Function for Gallery Images
-function setupRollovers() {
-    const thumbnails = document.querySelectorAll(".thumbnail"); // Select all thumbnails
+// Function to dynamically create and display gallery images
+function createGallery() {
+    const galleryContainer = document.querySelector(".gallery-container");
+    galleryImages.forEach((image) => {
+        const imgElement = document.createElement("img");
+        imgElement.classList.add("thumbnail");
+        imgElement.src = image.thumbnail;
+        imgElement.alt = "Gallery Thumbnail";
+        imgElement.setAttribute("data-fullsize", image.fullsize);
 
-    thumbnails.forEach((thumbnail) => {
-        const fullSizeSrc = thumbnail.getAttribute("data-fullsize");
-        const thumbnailSrc = thumbnail.src; // Get the original thumbnail source
+        // Rollover effect
+        imgElement.onmouseover = () => imgElement.src = image.fullsize;
+        imgElement.onmouseout = () => imgElement.src = image.thumbnail;
 
-        // Handle mouseover and mouseout for rollover effect
-        thumbnail.onmouseover = () => thumbnail.src = fullSizeSrc;
-        thumbnail.onmouseout = () => thumbnail.src = thumbnailSrc;
+        // Append to gallery container
+        galleryContainer.appendChild(imgElement);
     });
 }
 
-// Run preload and rollover setup on page load
+// On page load, preload images and create gallery
 function onPageLoad() {
     preloadImages();
-    setupRollovers();
+    createGallery();
 }
 
 // Execute the function on page load
