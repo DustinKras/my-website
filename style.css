@@ -29,12 +29,16 @@ header h1 {
     padding-left: 10px; /* Adds space between the logo and the header text */
 }
 
-/* Navigation Styles: Styles for the horizontal navigation menu */
+/* Navigation Styles: Fixes for the background and text colors */
+nav {
+    background-color: #444; /* Dark gray background for the navigation bar */
+    padding: 10px 0; /* Adds padding to the navigation bar */
+}
+
 nav ul {
     list-style-type: none; /* Removes the default bullet points from the list */
     margin: 0; /* Removes default margin around the list */
     padding: 0; /* Removes default padding inside the list */
-    background-color: #444; /* Dark gray background for the navigation */
     text-align: center; /* Centers the navigation links */
 }
 
@@ -44,14 +48,16 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white; /* Makes the link text white */
+    color: white; /* Ensures the link text is white */
     text-decoration: none; /* Removes the underline from the links */
-    padding: 10px; /* Adds space inside the link area */
+    padding: 10px 15px; /* Adds padding around the links */
+    background-color: #444; /* Dark gray background for the links */
+    border-radius: 5px; /* Rounds the edges of the links */
 }
 
 nav ul li a:hover {
-    background-color: #555; /* Changes the background color of links when hovered */
-    color: #ddd; /* Changes the link text color when hovered */
+    background-color: #555; /* Darker background on hover */
+    color: #ddd; /* Lighter text color on hover */
 }
 
 /* Main Content Styles: Styles for the main content of the page */
