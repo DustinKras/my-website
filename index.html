@@ -9,7 +9,7 @@
     <!-- Link to the new external CSS file in the 'css' folder -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="onPageLoad()">
 
     <!-- Header section of the webpage, includes logo and name -->
     <header>
@@ -19,9 +19,9 @@
        <h1>Dustin Krasnowski</h1>
     </header>
 
-        <!-- Banner Section -->
+    <!-- Banner Section -->
     <section id="banner">
-        <img id="bannerImage" src="banner1.jpg" alt="Banner Image" width="100%" height="300px">
+        <img id="bannerImage" src="images/banner1.jpg" alt="Banner Image" width="100%" height="300px">
     </section>
 
     <!-- Navigation menu section for site-wide navigation links -->
@@ -33,6 +33,7 @@
           <li><a href="contact.html">Contact</a></li>
           <li><a href="volunteer.html">Volunteer Management</a></li>
           <li><a href="invitation.html">Volunteer Invitation</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
 
@@ -53,5 +54,8 @@
         <p>Copyright © 2024 Dustin Krasnowski</p>
         <p>Check out my <a href="projects.html">latest projects!</a></p>
     </footer>
+
+    <!-- Link to JavaScript file for the banner -->
+    <script src="scripts/banner.js"></script>
 </body>
 </html>
