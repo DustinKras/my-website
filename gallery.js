@@ -21,13 +21,13 @@ function setupRollovers() {
     const image3 = document.getElementById("image3");
 
     image1.onmouseover = () => image1.src = "fullsize1.png";
-    image1.onmouseout = () => image1.src = "fullsize1.png";
+    image1.onmouseout = () => image1.src = "thumbnail1.png";
 
     image2.onmouseover = () => image2.src = "fullsize2.png";
-    image2.onmouseout = () => image2.src = "images/fullsize2.png";
+    image2.onmouseout = () => image2.src = "thumbnail2.png";
 
     image3.onmouseover = () => image3.src = "fullsize3.png";
-    image3.onmouseout = () => image3.src = "fullsize3.png";
+    image3.onmouseout = () => image3.src = "thumbnail3.png";
 }
 
 // Run preload and rollover setup on page load
@@ -35,3 +35,6 @@ function onPageLoad() {
     preloadImages();
     setupRollovers();
 }
+
+// Execute the function on page load
+window.onload = onPageLoad;
