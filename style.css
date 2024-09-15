@@ -29,7 +29,7 @@ header h1 {
     padding-left: 10px; /* Adds space between the logo and the header text */
 }
 
-/* Navigation Styles: Fixes for the background and text colors */
+/* Navigation Styles */
 nav {
     background-color: #444; /* Dark gray background for the navigation bar */
     padding: 10px 0; /* Adds padding to the navigation bar */
@@ -60,7 +60,7 @@ nav ul li a:hover {
     color: #ddd; /* Lighter text color on hover */
 }
 
-/* Main Content Styles: Styles for the main content of the page */
+/* Main Content Styles */
 main {
     padding: 20px; /* Adds space inside the main content area */
 }
@@ -69,7 +69,7 @@ h2 {
     color: #444; /* Dark gray color for section headers */
 }
 
-/* Footer Styles: Styles for the footer at the bottom of the page */
+/* Footer Styles */
 footer {
     background-color: #333; /* Dark background color for the footer */
     color: white; /* White text color in the footer */
@@ -80,7 +80,7 @@ footer {
     width: 100%; /* Ensures the footer spans the entire width of the page */
 }
 
-/* Anchor Links (Links within the content): Controls link styles globally */
+/* Anchor Links */
 a {
     color: #0066cc; /* Default link color: blue */
 }
@@ -118,7 +118,7 @@ a:hover {
     max-width: 600px;
 }
 
-/* Style for the form */
+/* Form Styling */
 form {
     background-color: #f4f4f9;
     padding: 20px;
@@ -151,7 +151,7 @@ input[type="submit"]:hover {
     background-color: #003366;
 }
 
-/* Styles for the volunteer form */
+/* Volunteer Form Styles */
 button {
     margin-top: 10px;
     padding: 10px;
@@ -167,7 +167,7 @@ button:hover {
     background-color: #003366;
 }
 
-/* Style for the volunteer list */
+/* Volunteer List Styles */
 ul {
     list-style-type: none;
     padding-left: 0;
