@@ -1,19 +1,54 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your main CSS file -->
+    <script>
+        // Function to set cookies with form data
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+        }
+
+        // Function to handle form submission
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get form data
+            const userName = document.getElementById('userName').value;
+            const password = document.getElementById('password').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const newsletter = document.querySelector('input[name="signUpNewsletter"]:checked').value;
+
+            // Set cookies for each field (expiry set to 1 day)
+            setCookie('userName', userName, 1);
+            setCookie('password', password, 1);
+            setCookie('firstName', firstName, 1);
+            setCookie('lastName', lastName, 1);
+            setCookie('email', email, 1);
+            setCookie('phoneNumber', phoneNumber, 1);
+            setCookie('newsletter', newsletter, 1);
+
+            // Redirect to the confirmation page
+            window.location.href = 'confirm.html';
+        }
+    </script>
 </head>
 
 <body>
     <!-- Header section of the webpage, includes logo and name -->
     <header>
-        <!-- Displays a logo image and alt text if the image cannot load -->
         <img src="Logo.png" alt="Dustin's Logo" width="100" height="100">
-        <!-- Main title of the webpage (my name) -->
         <h1>Dustin Krasnowski</h1>
     </header>
 
@@ -37,53 +72,34 @@
     </nav>
 
     <!-- Registration Form Section -->
-    <section id="pageForm" style="margin: 40px auto; max-width: 600px; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <section id="pageForm" style="margin: 40px auto; max-width: 600px; background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
         <h2>Register for an Account</h2>
-        <form id="registrationForm" action="confirm.html" method="POST" onsubmit="return validateForm()">
-            <!-- Username Field -->
+        <form id="registrationForm" onsubmit="handleSubmit(event)">
             <label for="userName">Username:</label>
             <input type="text" id="userName" name="userName" placeholder="Enter your Username" required>
-            <span id="usernameError" class="error-message"></span>
 
-            <!-- Password Field -->
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your Password" required>
-            <span id="passwordError" class="error-message"></span>
 
-            <!-- Password Verify Field -->
-            <label for="passwordVerify">Verify your Password:</label>
-            <input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter your Password again" required>
-            <span id="passwordVerifyError" class="error-message"></span>
-
-            <!-- First Name Field -->
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
-            <span id="firstNameError" class="error-message"></span>
 
-            <!-- Last Name Field -->
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required>
-            <span id="lastNameError" class="error-message"></span>
 
-            <!-- Email Field -->
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
-            <span id="emailError" class="error-message"></span>
 
-            <!-- Phone Number Field -->
             <label for="phoneNumber">Phone Number:</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890" required pattern="\(\d{3}\) \d{3}-\d{4}">
-            <span id="phoneError" class="error-message"></span>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890" required>
 
-            <!-- Newsletter Field -->
             <label>Sign up for the newsletter:</label>
             <input type="radio" id="newsletterYes" name="signUpNewsletter" value="Yes" checked>
             <label for="newsletterYes">Yes</label>
             <input type="radio" id="newsletterNo" name="signUpNewsletter" value="No">
             <label for="newsletterNo">No</label>
 
-            <!-- Submit Button -->
-            <input type="submit" value="Register" style="background-color: #0066cc; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+            <input type="submit" value="Register" style="background-color: #0066cc; color: white; padding: 10px 20px; border: none;">
         </form>
     </section>
 
@@ -91,7 +107,5 @@
     <footer style="text-align: center; margin-top: 40px; background-color: #333; color: white; padding: 10px;">
         <p>This events site is for school tasks.</p>
     </footer>
-
-    <script src="validate.js"></script> <!-- Optional: JS for form validation -->
 </body>
 </html>
