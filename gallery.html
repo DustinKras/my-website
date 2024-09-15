@@ -12,16 +12,10 @@
     <section id="gallery">
         <h2>Image Gallery</h2>
         <div class="gallery-container">
-            <!-- Thumbnails with full-size images as sources -->
-            <a href="fullsize1.png" target="_blank">
-                <img class="thumbnail" id="image1" src="fullsize1.png" alt="Thumbnail 1" width="150" height="100">
-            </a>
-            <a href="fullsize2.png" target="_blank">
-                <img class="thumbnail" id="image2" src="fullsize2.png" alt="Thumbnail 2" width="150" height="100">
-            </a>
-            <a href="fullsize3.png" target="_blank">
-                <img class="thumbnail" id="image3" src="fullsize3.png" alt="Thumbnail 3" width="150" height="100">
-            </a>
+            <!-- Thumbnails with full-size images using data attributes -->
+            <img class="thumbnail" data-thumbnail="fullsize1.png" data-fullsize="fullsize1.png" alt="Thumbnail 1">
+            <img class="thumbnail" data-thumbnail="fullsize2.png" data-fullsize="fullsize2.png" alt="Thumbnail 2">
+            <img class="thumbnail" data-thumbnail="fullsize3.png" data-fullsize="fullsize3.png" alt="Thumbnail 3">
         </div>
     </section>
 
