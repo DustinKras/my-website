@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Management</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <header>
+        <h1>Volunteer Management</h1>
+    </header>
+
+    <section>
+        <h2>Manage Volunteers</h2>
+
+        <!-- Form to add and delete volunteers -->
+        <form id="volunteerForm">
+            <label for="volunteerName">Enter Volunteer Name:</label>
+            <input type="text" id="volunteerName" name="volunteerName" required>
+            <br><br>
+
+            <button type="button" id="addBtn">Add Volunteer</button>
+            <button type="button" id="deleteBtn">Delete Volunteer</button>
+            <button type="button" id="clearBtn">Clear List</button>
+            <button type="button" id="sortBtn">Sort Volunteers by Last Name</button>
+        </form>
+
+        <!-- Display volunteer list here -->
+        <h3>Volunteer List</h3>
+        <ul id="volunteerList">
+            <!-- Volunteers will be displayed here -->
+        </ul>
+    </section>
+
+    <script src="volunteer.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
