@@ -8,72 +8,90 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to your main CSS file -->
 </head>
 
+<body>
     <!-- Header section of the webpage, includes logo and name -->
     <header>
-       <!-- Displays a logo image and alt text if the image cannot load -->
-       <img src="Logo.png" alt="Dustin's Logo" width="100" height="100">
-       <!-- Main title of the webpage (my name) -->
-       <h1>Dustin Krasnowski</h1>
+        <!-- Displays a logo image and alt text if the image cannot load -->
+        <img src="Logo.png" alt="Dustin's Logo" width="100" height="100">
+        <!-- Main title of the webpage (my name) -->
+        <h1>Dustin Krasnowski</h1>
     </header>
 
     <!-- Banner Section -->
     <section id="banner">
-        <img id="bannerImage" src="banner1.png" alt="Banner Image" width="100%" height="300px">
+        <img id="bannerImage" src="banner1.png" alt="Banner Image" style="width: 100%; height: 300px;">
     </section>
 
     <!-- Navigation menu section for site-wide navigation links -->
     <nav>
-       <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Me</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="volunteer.html">Volunteer Management</a></li>
-          <li><a href="invitation.html">Volunteer Invitation</a></li>
-          <li><a href="registration.html">Registration</a></li> <!-- Link to registration.html -->
-          <li><a href="gallery.html">Gallery</a></li>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="volunteer.html">Volunteer Management</a></li>
+            <li><a href="invitation.html">Volunteer Invitation</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
         </ul>
     </nav>
 
-    <section id="pageForm">
+    <!-- Registration Form Section -->
+    <section id="pageForm" style="margin: 40px auto; max-width: 600px; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
         <h2>Register for an Account</h2>
-        <form id="registrationForm" action="#">
+        <form id="registrationForm" action="confirm.html" method="POST" onsubmit="return validateForm()">
+            <!-- Username Field -->
             <label for="userName">Username:</label>
             <input type="text" id="userName" name="userName" placeholder="Enter your Username" required>
+            <span id="usernameError" class="error-message"></span>
 
+            <!-- Password Field -->
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            <span id="passwordError" class="error-message"></span>
 
+            <!-- Password Verify Field -->
             <label for="passwordVerify">Verify your Password:</label>
             <input type="password" id="passwordVerify" name="passwordVerify" placeholder="Enter your Password again" required>
+            <span id="passwordVerifyError" class="error-message"></span>
 
+            <!-- First Name Field -->
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" name="firstName" placeholder="Enter your First Name" required>
+            <span id="firstNameError" class="error-message"></span>
 
+            <!-- Last Name Field -->
             <label for="lastName">Last Name:</label>
             <input type="text" id="lastName" name="lastName" placeholder="Enter your Last Name" required>
+            <span id="lastNameError" class="error-message"></span>
 
+            <!-- Email Field -->
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
+            <span id="emailError" class="error-message"></span>
 
+            <!-- Phone Number Field -->
             <label for="phoneNumber">Phone Number:</label>
             <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(123) 456-7890" required pattern="\(\d{3}\) \d{3}-\d{4}">
+            <span id="phoneError" class="error-message"></span>
 
+            <!-- Newsletter Field -->
             <label>Sign up for the newsletter:</label>
             <input type="radio" id="newsletterYes" name="signUpNewsletter" value="Yes" checked>
             <label for="newsletterYes">Yes</label>
             <input type="radio" id="newsletterNo" name="signUpNewsletter" value="No">
             <label for="newsletterNo">No</label>
 
-            <input type="submit" value="Register">
+            <!-- Submit Button -->
+            <input type="submit" value="Register" style="background-color: #0066cc; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
         </form>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer style="text-align: center; margin-top: 40px; background-color: #333; color: white; padding: 10px;">
         <p>This events site is for school tasks.</p>
     </footer>
 
     <script src="validate.js"></script> <!-- Optional: JS for form validation -->
 </body>
-
 </html>
