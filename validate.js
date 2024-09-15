@@ -1,77 +1,71 @@
-// Function to validate the form
 function validateForm() {
     let isValid = true;
 
-    // Clear any existing error messages
-    clearErrors();
+    // Clear previous error messages
+    document.querySelectorAll('.error').forEach(el => el.textContent = "");
 
-    // Validate Username (must contain only letters and numbers)
-    const username = document.getElementById('username').value;
-    const usernameRegex = /^[a-zA-Z0-9]+$/;
-    if (!username.match(usernameRegex)) {
-        showError('usernameError', 'Username can only contain letters and numbers');
+    // Username validation
+    const userName = document.getElementById('userName').value;
+    if (!/^[a-zA-Z0-9]+$/.test(userName)) {
+        document.getElementById('errorUserName').textContent = "Username must contain only letters and numbers.";
+        document.getElementById('userName').focus();
         isValid = false;
     }
 
-    // Validate Password (minimum 8 characters)
+    // Password validation
     const password = document.getElementById('password').value;
     if (password.length < 8) {
-        showError('passwordError', 'Password must be at least 8 characters');
+        document.getElementById('errorPassword').textContent = "Password must be at least 8 characters.";
+        document.getElementById('password').focus();
         isValid = false;
     }
 
-    // Validate Password Verify (must match password)
+    // Password Verify validation
     const passwordVerify = document.getElementById('passwordVerify').value;
-    if (password !== passwordVerify) {
-        showError('passwordVerifyError', 'Passwords do not match');
+    if (passwordVerify !== password) {
+        document.getElementById('errorPasswordVerify').textContent = "Passwords do not match.";
+        document.getElementById('passwordVerify').focus();
         isValid = false;
     }
 
-    // Validate First Name (required field)
+    // First Name validation
     const firstName = document.getElementById('firstName').value;
-    if (firstName.trim() === '') {
-        showError('firstNameError', 'First Name is required');
+    if (!/^[a-zA-Z]+$/.test(firstName)) {
+        document.getElementById('errorFirstName').textContent = "First name must contain only letters.";
+        document.getElementById('firstName').focus();
         isValid = false;
     }
 
-    // Validate Last Name (required field)
+    // Last Name validation
     const lastName = document.getElementById('lastName').value;
-    if (lastName.trim() === '') {
-        showError('lastNameError', 'Last Name is required');
+    if (!/^[a-zA-Z]+$/.test(lastName)) {
+        document.getElementById('errorLastName').textContent = "Last name must contain only letters.";
+        document.getElementById('lastName').focus();
         isValid = false;
     }
 
-    // Validate Email (xxx@xxx.xxx format)
+    // Email validation
     const email = document.getElementById('email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email && !email.match(emailRegex)) {
-        showError('emailError', 'Invalid email format');
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById('errorEmail').textContent = "Email must be in the format xxx@xxx.xxx.";
+        document.getElementById('email').focus();
         isValid = false;
     }
 
-    // Validate Phone Number ((xxx) xxx-xxxx format)
+    // Phone Number validation
     const phoneNumber = document.getElementById('phoneNumber').value;
-    const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
-    if (phoneNumber && !phoneNumber.match(phoneRegex)) {
-        showError('phoneError', 'Phone number must be in (xxx) xxx-xxxx format');
+    const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+    if (phoneNumber && !phonePattern.test(phoneNumber)) {
+        document.getElementById('errorPhoneNumber').textContent = "Phone number must be in the format xxx-xxx-xxxx.";
+        document.getElementById('phoneNumber').focus();
         isValid = false;
     }
 
-    // Set focus on the first invalid field
-    if (!isValid) {
-        document.querySelector('.error-message:not(:empty)').previousElementSibling.focus();
+    // If form is valid, redirect to confirmation.php
+    if (isValid) {
+        window.location.href = 'confirmation.php';
     }
 
-    return isValid;
-}
-
-// Function to show error message
-function showError(fieldId, message) {
-    document.getElementById(fieldId).textContent = message;
-}
-
-// Function to clear all error messages
-function clearErrors() {
-    const errorMessages = document.querySelectorAll('.error-message');
-    errorMessages.forEach(error => error.textContent = '');
+    return false; // Prevent default form submission
 }
