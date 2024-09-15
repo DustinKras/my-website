@@ -1,6 +1,6 @@
 // Preload banner images
 function preloadBannerImages() {
-    const images = ["banner1.jpg", "banner2.jpg"];
+    const images = ["banner1.png", "banner2.png"];
     images.forEach((src) => {
         const img = new Image();
         img.src = src;
@@ -9,7 +9,7 @@ function preloadBannerImages() {
 
 // Function to cycle the banner images
 function cycleBannerImages() {
-    const bannerImages = ["banner1.jpg", "banner2.jpg"];
+    const bannerImages = ["banner1.png", "banner2.png"];
     let currentImageIndex = 0;
 
     setInterval(() => {
