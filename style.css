@@ -95,7 +95,6 @@ a:hover {
     gap: 20px; /* Adds space between the thumbnails */
     justify-content: center; /* Centers the gallery */
     margin: 20px 0;
-    flex-wrap: wrap; /* Allows thumbnails to wrap on smaller screens */
 }
 
 .thumbnail {
@@ -103,7 +102,7 @@ a:hover {
     height: auto;
     border: 2px solid #ddd; /* Adds a light border around the thumbnail */
     border-radius: 5px; /* Adds slight rounding to the corners */
-    transition: transform 0.2s ease-in-out, border-color 0.2s; /* Adds a slight animation effect on hover */
+    transition: transform 0.2s ease-in-out; /* Adds a slight animation effect on hover */
 }
 
 .thumbnail:hover {
@@ -113,16 +112,15 @@ a:hover {
 
 /* Full-size image display when clicking thumbnails */
 .full-size {
-    display: block;
+    display: none; /* Initially hidden */
     margin: 20px auto;
     width: 90%; /* Adjust as necessary for the desired full-size image */
     max-width: 600px;
-    transition: opacity 0.3s ease-in-out; /* Smooth loading of the full-size image */
-    opacity: 0; /* Initially hidden */
 }
 
-.full-size.loaded {
-    opacity: 1; /* Once loaded, make the full-size image visible */
+.full-image-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Responsive adjustments */
