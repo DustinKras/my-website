@@ -8,8 +8,6 @@
     <title>Dustin Krasnowski's Projects</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- Fireworks.js for fireworks effect -->
-    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.1.5/dist/fireworks.js"></script>
 </head>
 <body>
 
@@ -91,12 +89,6 @@
               Your browser does not support the audio element.
             </audio>
         </section>
-
-        <!-- Fireworks Effect -->
-        <section>
-            <h2>Celebrating the Success of My Projects</h2>
-            <div id="fireworks-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;"></div>
-        </section>
     </main>
 
     <!-- Footer section of the webpage -->
@@ -104,61 +96,5 @@
         <p>Copyright © 2024 Dustin Krasnowski</p>
         <p>Check out my <a href="contact.html">contact page</a> to get in touch with me!</p>
     </footer>
-
-    <!-- Fireworks Initialization Script -->
-    <script>
-        const container = document.getElementById('fireworks-container');
-        
-        // Initialize the fireworks effect
-        const fireworks = new Fireworks(container, {
-            autoresize: true,
-            opacity: 0.5,
-            acceleration: 1.05,
-            friction: 0.97,
-            gravity: 1.5,
-            particles: 150,
-            trace: 3,
-            explosion: 5,
-            intensity: 30,
-            flickering: 50,
-            lineStyle: 'round',
-            hue: {
-                min: 0,
-                max: 360
-            },
-            delay: {
-                min: 20,
-                max: 30
-            },
-            rocketsPoint: {
-                min: 50,
-                max: 50
-            },
-            brightness: {
-                min: 50,
-                max: 80
-            },
-            decay: {
-                min: 0.015,
-                max: 0.03
-            },
-            mouse: {
-                click: true,
-                move: false,
-                max: 3
-            },
-            sound: {
-                enable: false // Set to true if you want sound effects
-            }
-        });
-
-        // Start fireworks when the page loads
-        fireworks.start();
-
-        // Stop fireworks after 10 seconds
-        setTimeout(() => {
-            fireworks.stop();
-        }, 10000); // Fireworks display lasts 10 seconds
-    </script>
 </body>
 </html>
