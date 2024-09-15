@@ -16,12 +16,12 @@
 
         // Function to display cookies on the confirmation page
         function displayFormData() {
-            document.getElementById('username').textContent = getCookie('userName');
-            document.getElementById('firstName').textContent = getCookie('firstName');
-            document.getElementById('lastName').textContent = getCookie('lastName');
-            document.getElementById('email').textContent = getCookie('email');
-            document.getElementById('phoneNumber').textContent = getCookie('phoneNumber');
-            document.getElementById('newsletter').textContent = getCookie('newsletter');
+            document.getElementById('username').textContent = decodeURIComponent(getCookie('userName'));
+            document.getElementById('firstName').textContent = decodeURIComponent(getCookie('firstName'));
+            document.getElementById('lastName').textContent = decodeURIComponent(getCookie('lastName'));
+            document.getElementById('email').textContent = decodeURIComponent(getCookie('email'));
+            document.getElementById('phoneNumber').textContent = decodeURIComponent(getCookie('phoneNumber'));
+            document.getElementById('newsletter').textContent = decodeURIComponent(getCookie('newsletter'));
         }
 
         // Call the function when the page loads
