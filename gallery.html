@@ -13,17 +13,17 @@
         <h2>Image Gallery</h2>
         <div class="gallery-container">
             <!-- Thumbnails with full-size images as sources -->
-            <img class="thumbnail" src="fullsize1.png" alt="Thumbnail 1" data-fullsize="fullsize1.png">
-            <img class="thumbnail" src="fullsize2.png" alt="Thumbnail 2" data-fullsize="fullsize2.png">
-            <img class="thumbnail" src="fullsize3.png" alt="Thumbnail 3" data-fullsize="fullsize3.png">
+            <img class="thumbnail" src="fullsize1.png" alt="Thumbnail 1" data-fullsize="fullsize1.png" onclick="showFullImage(this)">
+            <img class="thumbnail" src="fullsize2.png" alt="Thumbnail 2" data-fullsize="fullsize2.png" onclick="showFullImage(this)">
+            <img class="thumbnail" src="fullsize3.png" alt="Thumbnail 3" data-fullsize="fullsize3.png" onclick="showFullImage(this)">
         </div>
-        <!-- Full-size Image Container (Initially hidden) -->
+        <!-- Full-size Image Container -->
         <div class="full-image-container">
             <img id="fullSizeImage" class="full-size" src="" alt="Full-size Image">
         </div>
     </section>
 
     <!-- JavaScript File for Preloading and Gallery Functionality -->
-    <script src="gallery.js"></script> <!-- Adjust path if needed -->
+    <script src="gallery.js"></script>
 </body>
 </html>
