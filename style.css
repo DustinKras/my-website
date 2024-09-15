@@ -10,7 +10,7 @@ body {
     padding: 0; /* Removes default padding */
 }
 
-/* Header Styles: Styles for the logo, header text, and header background */
+/* Header Styles: Restored original styles for the header */
 header {
     background-color: #333; /* Dark background for the header */
     color: white; /* White text in the header */
